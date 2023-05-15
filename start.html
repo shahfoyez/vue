@@ -9,7 +9,10 @@
 </head>
 <body>
     <div id="app">
-        {{ greeting }}
+        <!-- v-binding does both binding and event listener -->
+        <input type="text" v-model="greeting">
+        <p>{{ greeting }} ({{ greeting.length }})</p>
+
     </div>
     <script>
         Vue.createApp({
@@ -17,6 +20,12 @@
                 return{
                     greeting: "hello world"
                 };
+            },
+            mounted(){
+                // alert("lkdjsfgv");
+                setTimeout(() => {
+                    this.greeting = "Changed";
+                }, 3000);
             }
         }).mount('#app');
     </script>
