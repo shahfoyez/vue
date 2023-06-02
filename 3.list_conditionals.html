@@ -10,7 +10,7 @@
 </head>
 <body class="h-full grid place-items-center">
     <div id="app">
-       <section v-if="inProgressAssignments.length">
+        <section v-if="inProgressAssignments.length">
             <h2 class="font-bold mb-2">In Progress Assignments</h2>
             <ul>
                 <li 
@@ -23,22 +23,22 @@
                     </label>
                 </li>
             </ul>
-       </section>
+        </section>
        
-       <section class="mt-8" v-if="completedAssignments.length">
-        <h2 class="font-bold mb-2">Completed Assignments</h2>
-        <ul>  
-            <li 
-                v-for="assignment in completedAssignments" 
-                :key="assignment.id"
-            >
-                <label >
-                    {{ assignment.name }}
-                    <input type="checkbox" v-model="assignment.complete">
-                </label>
-            </li> 
-        </ul>
-   </section>
+        <section class="mt-8" v-if="completedAssignments.length">
+            <h2 class="font-bold mb-2">Completed Assignments</h2>
+            <ul>  
+                <li 
+                    v-for="assignment in completedAssignments" 
+                    :key="assignment.id"
+                >
+                    <label >
+                        {{ assignment.name }}
+                        <input type="checkbox" v-model="assignment.complete">
+                    </label>
+                </li> 
+            </ul>
+        </section>
     </div>
     <script>
         let app ={
